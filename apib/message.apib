@@ -1,0 +1,30 @@
+# Group Message
+## message [/message]
+### get message [GET]
+::: note 
+メッセージを確認することができます
+:::
++ Response 200 (application/json)
+    + Attributes
+        + body: hello world (string)
+### create Message [POST]
+::: note 
+新規メッセージの追加
+:::
++ Request (application/json)
+    + Headers
+
+            X-CUSTOM-HEADER: 123
+    + Attributes
+        + message: create message (string)
++ Response 201 (application/json)
+    + Headers
+
+            Location: https://example.com/api/v1/message/2
+
+### Delete  [DELETE /message/{id}]
++ Parameters
+    + id: 1 (number, required) - メッセージIDを指定します
++ Response 204 (application/json)
+    + Attributes
+        + result: true (boolean)
